@@ -88,7 +88,8 @@ function getPlayerSelection() {
             console.log(singleRound(getPlayerSelection(), getComputerSelection()));
             console.log(`Player Score: ${playerScore} - Computer Score ${computerScore}`);
         }
-        checkWinner();
+        console.log(checkWinner());
+        console.log(clearScores());
 
     }
 
@@ -105,9 +106,13 @@ function getPlayerSelection() {
         }
     }
 
-    
+    function clearScores() {
+        playerScore = 0;
+        computerScore = 0;
+    }
 
     game();
+   
 
    
     
