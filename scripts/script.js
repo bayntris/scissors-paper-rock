@@ -1,4 +1,4 @@
-function getComputerChoice() {
+function getComputerSelection() {
     let number = Math.floor(Math.random() * 3);
 
     if (number === 0) {
@@ -15,16 +15,16 @@ function getComputerChoice() {
     }
 }
 
-function playerSelection() {
+function getPlayerSelection() {
     
-    let playerChoice = prompt('Please choose between Scissors, Paper or Rock', '').toLowerCase();
+    let playerSelection = prompt('Please choose between Scissors, Paper or Rock', '').toLowerCase();
     
-    if (playerChoice === 'paper' || playerChoice === 'scissors' || playerChoice === 'rock') {
+    if (playerSelection === 'paper' || playerSelection === 'scissors' || playerSelection === 'rock') {
         return playerChoice;
     }
     else {
-        playerChoice = prompt('Invalid answer, please choose between Paper, Scissors or Rock', '');
-        return playerChoice.toLowerCase();
+        playerSelection = prompt('Invalid answer, please choose between Paper, Scissors or Rock', '');
+        return playerSelection.toLowerCase();
     }
     
 }
