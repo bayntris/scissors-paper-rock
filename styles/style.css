@@ -12,6 +12,7 @@ body {
 header {
     display: flex;
     justify-content: center;
+
     padding: 20px;
     
 }
@@ -25,16 +26,31 @@ header {
 }
 
 #results {
-    display: flex;
-    justify-content: space-around;
+   
     background-color: lightblue;
 }
 
-#results-player, #results-computer {
-    border: 1px solid red;
-    text-align: center;
-    font-size: 70px;
+.result-scores {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 60px;
     font-weight: bold;
+}
+
+
+#result-explanation {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    color:blueviolet;
+    
+}
+
+#results-player, #results-computer {
+   
+    text-align: center;
 }
 
 button {

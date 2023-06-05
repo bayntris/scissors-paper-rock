@@ -2,24 +2,31 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const divResults = document.querySelector('#results');
+const playerResult = document.querySelector('#player-score');
+const computerResult = document.querySelector('#computer-score');
+const result = document.querySelector("#result-explanation");
+console.log(result);
+
 
 const buttonPaper = document.querySelector('#paper');
 const buttonScissors = document.querySelector('#scissors');
 const buttonRock = document.querySelector('#rock');
 
 
-buttonPaper.addEventListener('click', () => {
-    console.log(singleRound('paper', getComputerSelection()));
-});
+function setScores(event) {
+    const target = event.target.getAttribute('id');
+    result.textContent = singleRound(target, getComputerSelection());
+    playerResult.textContent = playerScore;
+    computerResult.textContent = computerScore;
+    result.style.margin = '30px';
+}
 
-buttonScissors.addEventListener('click', () => {
-    console.log(singleRound('scissors', getComputerSelection()));
-})
 
-buttonRock.addEventListener('click', () => {
-    console.log(singleRound('rock', getComputerSelection()));
-});
+buttonPaper.addEventListener('click', setScores);
+
+buttonScissors.addEventListener('click', setScores);
+
+buttonRock.addEventListener('click', setScores);
 
 
 function getComputerSelection() {
