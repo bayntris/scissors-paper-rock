@@ -2,10 +2,36 @@
 <html lang ='en'>
     <head>
         <meta charset="utf-8">
-        <script type='text/javascript' src="./scripts/script.js"></script>
+        <script type='text/javascript' src="./scripts/script.js" defer></script>
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,900&display=swap" rel="stylesheet">
         <title> Rock Paper Scissors </title>
+
     </head>
     <body>
-        <h1> YO YO </h1>
+        <header>
+            <h1> Scissors Paper Rock </h1>
+        </header>
+        <div id="results">
+            <div id="results-player">
+                Player Score
+                <div id="player-score"> 0 </div>
+
+            </div>
+            <div id="results-computer">
+                Computer Score
+                <div id="computer-score"> 0 </div>
+                
+
+            </div>
+
+        </div>
+        <div id="buttonDiv">
+            <button id="paper"> Paper </button>
+            <button id="scissors"> Scissors </button>
+            <button id="rock"> Rock </button>
+        </div>
     </body>
 </html>

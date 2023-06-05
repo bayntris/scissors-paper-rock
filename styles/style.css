@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    
+}
+
+#buttonDiv {
+    display: flex;
+    justify-content: center;
+   
+    padding: 50px;
+    gap: 50px;
+}
+
+#results {
+    display: flex;
+    justify-content: space-around;
+    background-color: lightblue;
+}
+
+#results-player, #results-computer {
+    border: 1px solid red;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px;
+    border-radius: 15px;
+    width: 100px;
+    background-color: lightyellow;
+}

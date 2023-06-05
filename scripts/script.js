@@ -2,6 +2,24 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const divResults = document.querySelector('#results');
+
+const buttonPaper = document.querySelector('#paper');
+const buttonScissors = document.querySelector('#scissors');
+const buttonRock = document.querySelector('#rock');
+
+
+buttonPaper.addEventListener('click', () => {
+    console.log(singleRound('paper', getComputerSelection()));
+});
+
+buttonScissors.addEventListener('click', () => {
+    console.log(singleRound('scissors', getComputerSelection()));
+})
+
+buttonRock.addEventListener('click', () => {
+    console.log(singleRound('rock', getComputerSelection()));
+});
 
 
 function getComputerSelection() {
@@ -35,8 +53,6 @@ function getPlayerSelection() {
 }
 
     function singleRound(playerSelection, computerSelection) {
-
-        
 
         if (playerSelection === 'paper') {
             if (computerSelection === 'scissors') {
@@ -81,7 +97,7 @@ function getPlayerSelection() {
     }
 
 
-    function game() {
+    /*function game() {
 
 
         for (let i = 0; i <= 4; i++) {
@@ -89,9 +105,9 @@ function getPlayerSelection() {
             console.log(`Player Score: ${playerScore} - Computer Score ${computerScore}`);
         }
         console.log(checkWinner());
-        console.log(clearScores());
+        clearScores();
 
-    }
+    } */
 
 
     function checkWinner() {
@@ -111,7 +127,7 @@ function getPlayerSelection() {
         computerScore = 0;
     }
 
-    game();
+    
    
 
    
