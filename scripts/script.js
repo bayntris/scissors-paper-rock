@@ -147,7 +147,7 @@ function getComputerSelection() {
 
     function checkWinner() {
         if (playerScore > computerScore) {
-            return `Congratulations! Player Wins! Final score is 
+            return `Congratulations! You Win! Final score is 
             Player: ${playerScore} - Computer: ${computerScore} `;
         }
         else {
