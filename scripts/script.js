@@ -14,11 +14,24 @@ const buttonRock = document.querySelector('#rock');
 
 
 function setScores(event) {
+
     const target = event.target.getAttribute('id');
     result.textContent = singleRound(target, getComputerSelection());
+    result.style.margin = '30px';
+
+   
+    if (isWinner()) {
+        clearScores();
+    }
+
+    
     playerResult.textContent = playerScore;
     computerResult.textContent = computerScore;
-    result.style.margin = '30px';
+
+    
+    
+
+   
 }
 
 
@@ -46,29 +59,30 @@ function getComputerSelection() {
     }
 }
 
-function getPlayerSelection() {
-    
-    let playerSelection = prompt('Please choose between Scissors, Paper or Rock', '').toLowerCase();
-    
-    if (playerSelection === 'paper' || playerSelection === 'scissors' || playerSelection === 'rock') {
-        return playerSelection;
-    }
-    else {
-        playerSelection = prompt('Invalid answer, please choose between Paper, Scissors or Rock', '');
-        return playerSelection.toLowerCase();
-    }
-}
+
 
     function singleRound(playerSelection, computerSelection) {
 
         if (playerSelection === 'paper') {
             if (computerSelection === 'scissors') {
                 computerScore++;
-                return 'Computer Wins! Scissors beats Paper!';
+
+                if (isWinner()) {
+                    
+                    return checkWinner();
+                }
+
+                return 'Computer Wins this round! Scissors beats Paper!';
             }
             else if (computerSelection === 'rock') {
                 playerScore++;
-                return 'You Win! Paper beats Rock!';
+
+                if (isWinner()) {
+                  
+                    return checkWinner();
+                }
+
+                return 'You Win this round! Paper beats Rock!';
             }
             else {
                 return 'Tie! Both chose Paper!';
@@ -77,11 +91,23 @@ function getPlayerSelection() {
         else if (playerSelection === 'scissors') {
             if (computerSelection === 'rock') {
                 computerScore++;
-                return 'Computer Wins! Rock beats Scissors!';
+
+               if (isWinner()) {
+                   
+                    return checkWinner();
+                }
+
+                return 'Computer Wins this round! Rock beats Scissors!';
             }
             else if (computerSelection === 'paper') {
                 playerScore++;
-                return 'You Win! Scissors beats Paper!';
+
+                if (isWinner()) {
+                   
+                    return checkWinner();
+                }
+
+                return 'You Win this round! Scissors beats Paper!';
             }
             else {
                 return 'Tie! Both chose Scissors!';
@@ -90,42 +116,43 @@ function getPlayerSelection() {
         else if (playerSelection === 'rock') {
             if (computerSelection === 'paper') {
                 computerScore++;
-                return 'Computer Wins! Paper beats Rock!';
+
+               if (isWinner()) {
+                    
+                    return checkWinner();
+                }
+
+                return 'Computer Wins this round! Paper beats Rock!';
             }
             else if (computerSelection === 'scissors') {
                 playerScore++;
-                return 'You Win! Rock beats Scissors!';
+                
+                return 'You Win this round! Rock beats Scissors!';
             }
             else {
                 return 'Tie! Both chose Rock!';
             }
         }
+        
      
     }
 
 
-    /*function game() {
-
-
-        for (let i = 0; i <= 4; i++) {
-            console.log(singleRound(getPlayerSelection(), getComputerSelection()));
-            console.log(`Player Score: ${playerScore} - Computer Score ${computerScore}`);
+    function isWinner() {
+        if (playerScore === 5 || computerScore === 5) {
+            return true;
         }
-        console.log(checkWinner());
-        clearScores();
-
-    } */
-
+        return false;
+    }
 
     function checkWinner() {
         if (playerScore > computerScore) {
-            return `Congratulations! Player Wins!!!`;
-        }
-        else if (computerScore > playerScore) {
-            return `Unlucky! Computer Wins!!!`;
+            return `Congratulations! Player Wins! Final score is 
+            Player: ${playerScore} - Computer: ${computerScore} `;
         }
         else {
-            return `Wow! It's a tie`;
+            return `Unlucky! Computer Wins! Final score is 
+            Player: ${playerScore} - Computer: ${computerScore}`;
         }
     }
 
